@@ -1,0 +1,63 @@
+------------ Introdução JavaScript ------------
+
+Console.log = serve para mostrar mensagens na tela 
+
+Exemplo
+
+console.log("Hello Word")
+Comentar funciona com o Ctrl + ;
+
+------------ Variáveis JavaScript ------------
+Para declarar váriavel da seguinte maneira
+let nome_da_variável = valor
+
+Exemplos
+
+let idade = 15
+let nome = "Murilo"
+let verdadeiro = true
+let falso = falso
+
+------------ Concatenação JavaScript ------------
+
+Junção de Variáveis e/ou textos
+
+------------ Operações JavaScript ------------
+
+Para arrendondar numeros se faz da seguinte maneira
+variavel = variavel.ToFixed(quantidade de casas a ser arrendondada)
+
+Exemplo
+hots = hots.toFixed(2)
+
+Opções para converter texto em número
+nome_da_variável = parseInt(nome_da_variável)
+
+ou
+let idade = parseInt (prompt("Digite a sua idade: ")) 
+
+------------ Input JavaScript ------------
+
+Para poder fazer entrada de dados no Js como por exemplo é necessario baixair o pacote (npm prompt sync)
+depois instala o pacote na pasta onde está o arquivo e estará funcionando 
+
+Exemplo:
+
+let prompt = require("prompt-sync")();
+
+let nome = prompt("Digite o Seu nome: ")
+console.log("Seja Bem-Vindo(a) "+nome) 
+
+------------ Função JavaScript ------------
+
+Para criar uma Fução funciona da seguinte maneira 
+function nome_da_funcao(){}
+
+E para chamar função basta apenas digitar o nome da função com o ()
+Exemplo
+atividade()
+
+------------ Operador AND OR JavaScript ------------
+
+
+
