@@ -1,0 +1,64 @@
+<script>
+    
+    
+
+    
+    let posicao = 6
+    let chao = "_"
+    let personagem = "X"
+    let tamanho_mundo = 10
+    let moeda = "*"
+    let posicao_moeda = 3
+
+    document.addEventListener("keyup", (e)=>{
+        if(e.key == "ArrowRight"){
+            posicao++
+        }
+        else if(e.key == "ArrowLeft"){
+            posicao-- 
+        }
+
+        console.clear()
+        desenhar()
+        desenharMoeda()
+    })
+
+    function desenhar(){
+        let mapa = ""
+        for(let i = 0; i < tamanho_mundo; i++){
+            if(i == posicao)
+            {
+                mapa += personagem
+            }
+            else
+            {
+            mapa += chao
+            }
+            
+            }
+
+            console.log(mapa)
+    }
+    
+    
+    function desenharMoeda(){
+    let mapa = ""
+    for (let i = 0; i < tamanho_mundo; i++){
+                if (i == posicao_moeda)
+                {
+                    mapa += moeda
+                }
+                else
+                {
+                    mapa += chao
+                }
+            }
+
+            console.log(mapa)
+
+        }
+
+       
+
+
+</script>   
