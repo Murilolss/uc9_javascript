@@ -4,6 +4,11 @@ let prompt = require("prompt-sync")();
 let nome = ""
 let idade = 0
 let ativo = false
+let nomes = []
+let idades = []
+
+
+
 
 main()
 function main(){
@@ -22,6 +27,8 @@ function main(){
     
     if(opcao == "1"){
         cadastro()
+        main()
+        return
     }
     else if (opcao == "2")
         {
@@ -48,29 +55,35 @@ function cadastro(){
     console.log("---- CADASTRO ----")
     nome = prompt("Digite seu Nome: ")
     idade = parseInt(prompt("Digite sua idade: "))
+    ativo = true
     setTimeout(() => {
         main()
     }, 2000);
-    ativo = true
 }
 
 
 function listar(){
+    console.clear()
     console.log("---- LISTAGEM ----")
-    console.log("O Nome é: "+nome)
-    console.log("Idade: "+idade)
-    console.log("Status: ")
-    document.addEventListener("keyup", (e)=>{
-        if(e.key == "Return"){
-            main()
-        }
-    })
+    // console.log("Nome: "+nome)
+    // console.log("Idade: "+idade)
+
+    // INTERPOLAÇÃO
     
-    if(opcao == "1"){
+    if (nome == ""){
+        console.log("NENHUM USUÁRIO CADASTRADO AINDA....")
         setTimeout(() => {
             main()
         }, 2000);
+        return
+        
     }
+   
+    console.log(`1 - Nome: ${nome} idade: ${idade} Status: ${ativo}`)
+
+    console.log(prompt("\nPressione ENTER para voltar ao menu..."))
+    main()
+    return
+    
+    
 }
-
-

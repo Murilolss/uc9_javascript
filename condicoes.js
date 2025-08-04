@@ -52,13 +52,13 @@ function atividade2(){
     let valor1 = valor + (valor * 0.05)
     let valor2 = valor - (valor * 0.10)
 
-    if(pagamento == "Credito")
+    if(pagamento == "Credito" || pagamento == "credito" || pagamento == "CREDITO")
     {
 
         console.log("O Valor Total ficou em R$: "+valor1+", Compras no Crédito tem um acréssimo de 5% no valor da compra")
     }
     
-    else if(pagamento == "Debito")
+    else if(pagamento == "Debito" || pagamento == "debito" || pagamento == "DEBITO")
     {
     
         console.log("O Valor Total ficou em R$: "+valor2+", Compras no débito tem um desconto de 10% no valor da compra")
