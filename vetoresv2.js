@@ -3,8 +3,7 @@ let prompt = require("prompt-sync")();
 
 let opcao
 
-let usuarios
- = [
+let nomes = [
     {
         id: 1,
         nome: "Chaves",
@@ -52,8 +51,8 @@ function main(){
     if(opcao == 1){
         let nome = prompt("Digite um nome: ")
         let idade = prompt("Digite sua idade: ")
-        usuarios.push({
-            id: usuarios[usuarios.length - 1].id + 1,
+        nomes.push({
+            id: nomes[nomes.length - 1].id + 1,
             nome: nome,
             idade: idade
         })
@@ -62,8 +61,8 @@ function main(){
     }
     else if (opcao == 2)
     {
-        for (let i = 0; i < usuarios.length; i++) {
-            console.log(`${i+1} - ${usuarios[i].nome} ${usuarios[i].idade} anos ID [${usuarios[i].id}]`)
+        for (let i = 0; i < nomes.length; i++) {
+            console.log(`${i+1} - ${nomes[i].nome} ${nomes[i].idade} anos ID [${nomes[i].id}]`)
             
         }
 
@@ -75,9 +74,9 @@ function main(){
         {
             let posicao = prompt("Digite a posição do usuário que quer buscar: ") 
 
-            if (usuarios.length >= posicao){
-                console.log(`O usuário é ${usuarios[posicao-1].nome}`)
-                let alteracao = (prompt("Digite 1 para alterar o nome, 2 para manter o nome e 3 para sair: "))
+            if (nomes.length >= posicao){
+                console.log(`O usuário é ${nomes[posicao-1].nome}`)
+                let alteracao = (prompt("Digite 1 para alterar e 2 para sair: "))
                 if(alteracao == "1"){
                     alterar(posicao-1)
                 }
@@ -119,32 +118,10 @@ function teste(){
 
 function alterar(posicao){
     let novo_nome = prompt("Digite um novo Nome: ")
-    usuarios[posicao].nome = novo_nome
+    nomes[posicao].nome = novo_nome
     console.log("Nome alterado com sucesso!!")
-        setTimeout(() => {
-            main()
-        }, 2000);
-    
+    setTimeout(() => {
+        main()
+    }, 2000);
 
 }
-
-function ateraridade(){
-    let alterar_idade = (prompt("Digite 1 para alterar a idade e 2 para manter: "))
-    
-    if(alterar_idade == "1"){
-        let nova_idade = prompt("Digite a nova idade: ")
-        usuarios[posicao].idade = nova_idade
-        console.log("Nome e idade alterado com sucesso!!")
-        setTimeout(() => {
-            main()
-        }, 2000);
-    }
-    else if (alterar_idade == "2")
-    {
-        console.log("Nome alterado com sucesso!!")
-        setTimeout(() => {
-            main()
-        }, 2000);
-    }
-}
-
