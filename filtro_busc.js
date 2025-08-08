@@ -28,7 +28,7 @@ let nomes = [
         
     },
     {
-        id: 5,
+        id: 5, 
         nome: "Nhonho",
         idade: 9,
         
@@ -37,6 +37,12 @@ let nomes = [
         id: 6,
         nome: "Bruxa do 71",
         idade: 69,
+        
+    },
+    {
+        id: 6,
+        nome: "Pópis",
+        idade: 9,
         
     },
 ]
@@ -81,6 +87,7 @@ function main(){
         
         let busca = prompt("Digite um Nome: ")
         //buscarNome(busca)
+        buscaparte(busca)
         prompt("Aperte a teclar ENTER para voltar ao menu....")
         main()
     }
@@ -110,10 +117,14 @@ function decrescente(){
 }
 
 function buscarNome(busca){
+
+    let buscanome = busca.toLowerCase()
+    let nomeatual 
     
     for (let i = 0; i < nomes.length; i++) {
+         nomeatual = nomes[i].nome.toLowerCase()
         
-        if (busca == nomes[i].nome){
+        if (buscanome == nomeatual){
             
             console.log(`ID [${nomes[i].id}] - ${nomes[i].nome} ${nomes[i].idade} anos `)
         }
@@ -124,7 +135,19 @@ function buscarNome(busca){
 
 }
 
-function buscaparte(){
+function buscaparte(busca){
+
+    let buscanome = busca.toLowerCase()
+    
+    for (let i = 0; i < nomes.length; i++) {
+        
+        let nomeatual = nomes[i].nome.toLowerCase()
+        if (nomeatual.includes(buscanome) == true){
+            
+            console.log(`ID [${nomes[i].id}] - ${nomes[i].nome} ${nomes[i].idade} anos `)
+        }
+         
+    }
     
 }
     

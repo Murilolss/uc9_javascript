@@ -125,3 +125,16 @@ function alterar(posicao){
     }, 2000);
 
 }
+
+
+let buscanome = busca.toLowerCase()
+    
+for (let i = 0; i < nomes.length; i++) {
+    
+    let nomeatual = nomes[i].nome.toLowerCase()
+    if (nomeatual.includes(buscanome)){
+        
+        console.log(`ID [${nomes[i].id}] - ${nomes[i].nome} ${nomes[i].idade} anos `)
+    }
+     
+}
